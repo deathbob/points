@@ -1,0 +1,23 @@
+.point
+  %p
+    Description:
+    = point.description
+  %p
+    Repeatable?:
+    = point.repeatable ? "Yes" : "No"
+  %p
+    Cooldown:
+    = point.cooldown
+  %p
+    Controller:
+    = point.controller
+  %p
+    Action:
+    = point.action
+  %p
+    Value:
+    = point.value
+  %p
+  %p
+    = button_to "Delete", point, :method => :delete, :confirm => "Sure you want to delete this point? #{point.controller} #{point.action}"
+    = link_to "Edit", edit_point_path(point)

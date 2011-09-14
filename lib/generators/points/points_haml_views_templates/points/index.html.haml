@@ -1,0 +1,27 @@
+%h2
+  Points
+
+= link_to "New", new_point_path
+
+<hr>
+%table
+  %thead
+    %tr
+      %th Description
+      %th Value
+      %th Controller
+      %th Action
+      %th Cooldown (in seconds)
+      %th Repeatable?
+      %th Redemptions
+  %tbody
+    - @points.each do |point|
+      %tr
+        %td= point.description
+        %td= point.value
+        %td= point.controller
+        %td= point.action
+        %td= point.cooldown
+        %td= point.repeatable?
+        %td= link_to "Redemptions", point_redemptions_path(:point_id => point.id)
+        %td= link_to "Show Point", point_path(point)

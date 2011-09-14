@@ -1,0 +1,18 @@
+= form_for @point do |form|
+  %p
+    Description
+    = form.text_area :description
+  %p
+    Repeatable?
+    = form.check_box :repeatable
+  %p
+    Cooldown(in seconds)
+    = form.text_field :cooldown
+  %p
+    Controller / Action
+    = form.select :controller_and_action, options_for_points_action
+  %p
+    Value
+    = form.text_field :value
+  %p
+    = form.submit

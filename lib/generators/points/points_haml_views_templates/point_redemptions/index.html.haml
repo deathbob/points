@@ -1,0 +1,17 @@
+%h2 Point Redemptions
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Value
+      %th Point
+  %tbody
+    - @point_redemptions.each do |pr|
+      %tr
+        %td=# link_to pr.user.email, user_path(pr.user_id)
+        %td= pr.value
+        %td= link_to pr.point.controller_and_action, point_path(pr.point_id)
+
+
+
